@@ -3,16 +3,37 @@
 // Al click dell'utente sulla cella, la cella cliccata si colora di azzurro;
 // Al click dell'utente stampare un messaggio in console con il numero della cella cliccata;
 
+
+
+// Creare il click del button
+
+const button = document.getElementById('click');
+
+button.addEventListener('click', function () {
+
+    const gridNumber = 100; 
+    for ( let i = 1; i <= gridNumber; i++ ) {
+    
+        const gridContainer = document.querySelector('.grid-container');
+    const cell = document.createElement ('div');
+    gridContainer.append(cell);
+    cell.innerHTML = (i);
+    // Aggiungere le classi 
+    
+    cell.classList.add('cell');
+    
+    // Attivare il toggle al click
+    cell.addEventListener ('click', function () {
+        cell.classList.toggle('bg-toggle');
+        console.log(i);
+    });
+    
+    };
+    
+}); 
+
 // Creare la griglia numerata 
 
-for ( let i = 1; i <= 100; i++ ) {
-
-    const containerGrid = document.querySelector('.container-grid');
-const grid = document.createElement ('div');
-containerGrid.append(grid);
-grid.innerHTML = (i);
-
-}
 
 
 
